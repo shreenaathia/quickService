@@ -31,14 +31,14 @@ const UserSchema = new Schema({
         unique: true,
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
-    address: [{ 
+    address: { 
         type: Schema.Types.ObjectId, 
         ref: 'address'
-    }],
+    }/*,
     service: [{ 
         type: Schema.Types.ObjectId, 
         ref: 'service'
-    }]/*,
+    }],
     booking: [{ 
         type: Schema.Types.ObjectId, 
         ref: 'booking'
