@@ -11,13 +11,13 @@ const ServiceSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: 'user'
     },
-    address: { 
+    address: [{ 
         type: Schema.Types.ObjectId, 
         ref: 'address'
-    },
+    }],
     serviceType: { 
         type: String 
-    },
+    },/*
     booking: [{ 
         type: Schema.Types.ObjectId, 
         ref: 'booking'
@@ -25,7 +25,7 @@ const ServiceSchema = new Schema({
     review: [{ 
         type: Schema.Types.ObjectId, 
         ref: 'review'
-    }],
+    }],*/
     price: [{ 
         type: Number
     }]

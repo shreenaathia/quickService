@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NavBar from "./NavBar";
 import NotFound from "./NotFound";
+import Footer from "./component/Footer/Footer";
 
 class App extends Component {
 
@@ -12,7 +13,10 @@ class App extends Component {
                 <Switch>
 
                     <Route exact path='/' render={() => (
-                        <NavBar/>
+                        <div>
+                            <NavBar/>
+                            <Footer/>
+                        </div>
                     )}/>
 
                     <Route render={() => (

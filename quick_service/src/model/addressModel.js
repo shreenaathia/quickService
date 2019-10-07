@@ -16,15 +16,15 @@ const AddressSchema = new Schema({
     },
     postal: { 
         type: String
-    },
-    /*userId: { 
+    }/*,
+    userId: { 
         type: Schema.Types.ObjectId,
         ref: 'user'
-    },*/
+    },
     service: [{ 
         type: Schema.Types.ObjectId, 
         ref: 'service'
-    }]
+    }]*/
 })
 
 const Service = mongoose.model('service', ServiceSchema);
