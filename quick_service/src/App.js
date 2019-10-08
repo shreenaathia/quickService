@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import NavBar from "./NavBar";
+import MainContainer from "./MainContainer";
 import NotFound from "./NotFound";
 import Footer from "./component/Footer/Footer";
 
@@ -14,7 +14,7 @@ class App extends Component {
 
                     <Route exact path='/' render={() => (
                         <div>
-                            <NavBar/>
+                            <MainContainer/>
                             <Footer/>
                         </div>
                     )}/>
