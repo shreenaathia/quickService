@@ -7,7 +7,44 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+#with_bg {
+  background: url("bg.jpg") no-repeat center center;
+  background-size: cover;
+  height: 40vh;
+  overflow: hidden;
+  child-align: bottom;
+}
+
+#title {
+  font-size: 5vw;
+  padding: 15vh auto;
+}
+
+.row {
+  width: 100vw;
+  align-content: center;
+  text-align: center;
+}
+
+#sign_in_up a {
+  color: black;
+  text-decoration: none;
+}
+
+#nav:last-child a {
+  color: black;
+  display: block;
+  padding: 5vw 2vw 4px 2vw;
+  text-decoration: none;
+  font-size: 2vw;
+  border-bottom: 4px solid transparent;
+  text-align: center;
+}
+
+#nav:last-child a:hover {
+  border-bottom: 4px solid red;
+}
+
+#nav:last-child a .active {
+  border-bottom: 4px solid red;
 }
