@@ -48,3 +48,19 @@ body {
 #nav:last-child a .active {
   border-bottom: 4px solid red;
 }
+
+/* added base css for footer. Oct 13, 2019 - Jun*/
+#footer {
+  /*temporary colour*/
+  background-color: rgb(243, 117, 117);
+  position: fixed;
+  bottom: 0;
+}
+
+.newline {
+  background-color: rgb(243, 117, 117);
+  white-space: pre-line;
+  text-align: right;
+}
+/* end */
+

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './Footer.css';
+import '../../index.css';
 
 class Footer extends Component {
     render() {
-        const contact = 'Contact QuickService \n Seneca@York Campus \n 70 The Pond Road \n Toronto, \n ON M3J 3M6';
+        const contact = 'Contact QuickService \n Seneca@York Campus \n 70 The Pond Road \n Toronto, ON M3J 3M6';
         return (
             <div>
                 <footer id="footer">
