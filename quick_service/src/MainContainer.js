@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-
+// import "./component/footer/Footer";
+// import Sidebar from "./component/sidebar/Sidebar";
+import Footer from './component/footer/Footer';
+import SideBar from './component/sidebar/Sidebar';
 
 class MainContainer extends Component {
     constructor(props) {
@@ -66,6 +69,10 @@ class MainContainer extends Component {
                     </div>
 
                 </div>
+                <div className="row">
+                    <SideBar/>      
+                </div>                
+                <Footer/>
             </div>
         );
     }
