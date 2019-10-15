@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import MainContainer from "./MainContainer";
 import NotFound from "./NotFound";
-import Footer from "./component/Footer/Footer";
+//import Footer from "./component/Footer/Footer";
 
 class App extends Component {
 
@@ -15,7 +15,6 @@ class App extends Component {
                     <Route exact path='/' render={() => (
                         <div>
                             <MainContainer/>
-                            <Footer/>
                         </div>
                     )}/>
 

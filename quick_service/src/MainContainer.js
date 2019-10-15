@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import Footer from './component/footer/Footer';
+import SideBar from './component/sidebar/SideBar';
 
 class MainContainer extends Component {
     constructor(props) {
@@ -91,6 +92,9 @@ class MainContainer extends Component {
                         </div>
                     </div>
                 </div>
+                {/* put in sidebar for testing, remove once we have actual service pages */}
+                {/* <SideBar/> */}
+                <Footer/>
             </div>
         );
     }
