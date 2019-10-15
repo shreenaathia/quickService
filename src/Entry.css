@@ -1,0 +1,38 @@
+
+.entryPoint{ 
+    margin-left:auto; 
+    margin-right:0
+}
+
+.btn-color-0 {
+   /* 
+   background-color: #d7ac45!important
+   */
+   width: 15%;
+   height: 10%;
+ }
+ 
+
+.entryPoint .btn-color-0 {
+    color: #636c72;
+    background-color:  #d7ac45;
+    border-color:  #d7ac45;
+ }
+ 
+ .entryPoint .btn-color-0:hover {
+    color: #fff;
+    background-color:  #2a8279;
+    border-color: #2a8279;
+ }
+ 
+ .entryPoint .btn-color-0.disabled, .btn-color-4:disabled {
+    color: #fff;
+    background-color: #fff;
+ }
+ 
+ .entryPoint .btn-color-0.active, .btn-color-4:active, .show>.btn-color-4.dropdown-toggle {
+    color: #fff;
+    background-color: #2a8279;
+    border-color: #2a8279;
+ }
+ 
