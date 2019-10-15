@@ -2,47 +2,50 @@ Home Page desciption:
 
 Header:
 
-  -navigation on the top
+    -navigation on the top
   
-  -contain(left to right)
-  
-    -logo
+    -contain(left to right)
     
-    -Main tabs:
+      -logo
     
-      -Home
-      
-      -Discover
-      
-      -About us
-      
-    -Search set:
+      -Main tabs:
     
-      -search box
+       -Home
       
-      -sezrch button
+       -Discover
       
-    -Account set:
+       -About us
+      
+     -Search set:
     
-     -sign in
+        -search box
+      
+        -sezrch button
+      
+     -Account set:
+    
+      -sign in
      
-     -sign up
+       -sign up
      
 
 EntryHeader:
 
-  -Main features exhibition
+     -Main features exhibition
+
 
 Entry:
 
-  -role selection to the services
+    -role selection to the services
+
 
 EntryContent:
 
-  -project/team descption
+    -project/team descption
+
 
 Footer:
-
-  -footer in the end
   
-  -ongoing?
+    -footer in the end
+  
+    -ongoing?
