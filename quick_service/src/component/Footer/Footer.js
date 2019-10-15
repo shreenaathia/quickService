@@ -9,7 +9,7 @@ class Footer extends Component {
                 <footer id="footer">
                     <div className="container">
                         <div className="row">
-                            <div className="col-sm-6">Copyright &copy; 2019 QuickSerivce</div>
+                            <div className="col-sm-6">Copyright &copy; 2019 QuickService</div>
                             <div className="col-sm-6">
                                 <div className="newline">
                                     {contact}
