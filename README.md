@@ -1,6 +1,6 @@
-Home Page desciption:
+# Home Page desciption:
 
-Header:
+### Header:
 
     -navigation on the top
   
@@ -10,41 +10,41 @@ Header:
     
       -Main tabs:
     
-       -Home
+             -Home
       
-       -Discover
+             -Discover
       
-       -About us
+             -About us
       
      -Search set:
     
-        -search box
+            -search box
       
-        -sezrch button
+            -sezrch button
       
      -Account set:
     
-      -sign in
+            -sign in
      
-       -sign up
+            -sign up
      
 
-EntryHeader:
+### EntryHeader:
 
      -Main features exhibition
 
 
-Entry:
+### Entry:
 
     -role selection to the services
 
 
-EntryContent:
+### EntryContent:
 
     -project/team descption
 
 
-Footer:
+### Footer:
   
     -footer in the end
   
