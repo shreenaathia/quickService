@@ -32,6 +32,21 @@ const UserSchema = new Schema({
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
     address: { 
+        // streetNumber: { 
+        // type : Number
+        // },
+        // streetName: { 
+        //     type: String
+        // },
+        // city: { 
+        //     type: String
+        // },
+        // province: { 
+        //     type: String 
+        // },
+        // postal: { 
+        //     type: String
+        // } 
         type: Schema.Types.ObjectId, 
         ref: 'address'
     }/*,
