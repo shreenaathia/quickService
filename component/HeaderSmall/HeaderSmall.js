@@ -13,48 +13,52 @@ class HeaderSmall extends Component {
     render() {
         return (
 
-            <div className="row" id="headersmall">
-                <div className="offset-md-1 col-md-2" id="logo">
-                    <Link to="/Home">
-                        <img src={logo} alt="logotest" />
-                    </Link>
-                </div>
+            <div>
+                <header>
+
+                    <div className="row" id="headersmall">
+                        <div className="offset-md-1 col-md-2" id="logo">
+                            <Link to="/Home">
+                                <img src={logo} alt="logotest" />
+                            </Link>
+                        </div>
 
 
-                <div className="col-md-3" id="tab3">
-                    <ul className="nav" >
-                        <li className="nav-item">
-                            <a className={(this.props.highlight === "Home" ? 'nav-link active' : 'nav-link')} href="/">Home</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className={(this.props.highlight === "Discover" ? 'nav-link active' : 'nav-link')} href="./Discover">Discover</a>
-                        </li>
-                        <li className="nav-item">
-                            <a className={(this.props.highlight === "Booking" ? 'nav-link active' : 'nav-link')} href="./Booking">Booking</a>
-                        </li>
+                        <div className="col-md-3" id="tab3">
+                            <ul className="nav" >
+                                <li className="nav-item">
+                                    <a className={(this.props.highlight === "Home" ? 'nav-link active' : 'nav-link')} href="/">Home</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className={(this.props.highlight === "Discover" ? 'nav-link active' : 'nav-link')} href="./Discover">Discover</a>
+                                </li>
+                                <li className="nav-item">
+                                    <a className={(this.props.highlight === "Booking" ? 'nav-link active' : 'nav-link')} href="./Booking">Booking</a>
+                                </li>
 
-                    </ul>
-                </div>
+                            </ul>
+                        </div>
 
 
-                <div className="col-md-3" id="searchbox">
+                        <div className="col-md-3" id="searchbox">
 
-                    <form className="form-inline" action="">
-                        <input className="form-control form-control-md-2" type="search" placeholder="Ask me" aria-label="Search" />
-                        <button className="offset-md-1" type="submit" value="Submit" id="go">Go</button>
+                            <form className="form-inline" action="">
+                                <input className="form-control form-control-md-2" type="search" placeholder="Ask me" aria-label="Search" />
+                                <button className="offset-md-1" type="submit" value="Submit" id="go">Go</button>
 
-                    </form>
-                </div>
+                            </form>
+                        </div>
 
-                <div className="offset-md-1 col-md-1" id="user">
-                    <Link to="/Profile">
-                        <img src={usericon} alt="usericontest" />
-                    </Link>
-                </div>
+                        <div className="offset-md-1 col-md-1" id="user">
+                            <Link to="/Profile">
+                                <img src={usericon} alt="usericontest" />
+                            </Link>
+                        </div>
 
+                    </div>
+
+                </header>
             </div>
-
-
 
         );
     }
