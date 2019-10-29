@@ -67,6 +67,6 @@ const UserSchema = new Schema({
 
 UserSchema.virtual('userId').get(function() { return this._id; });
 
-const User = mongoose.model('user', UserSchema);
+// const User = mongoose.model('user', UserSchema);
 
 module.exports = User;
