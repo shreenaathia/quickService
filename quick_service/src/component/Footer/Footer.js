@@ -14,7 +14,6 @@ class Footer extends Component {
                             <div className="col-sm-6">
                                 <div className="newline">{contact}</div>
                             </div>
-                            
                         </div>
                     </div>  
                 </footer>

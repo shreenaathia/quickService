@@ -1,13 +1,78 @@
 import React, { Component } from 'react';
 import MainContainer from '../../MainContainer';
+import { FormErrors } from './FormErrors';
+
 
 class SignUp extends Component {
-    // constructor() {
-    //     super();
-    //     this.state = {
 
-    //     }
-    // }
+    constructor(props) {
+        super(props);
+        this.state = {
+            firstName: '',
+            lastName: '',
+            email: '',
+            password: '',
+            repassword: '',
+            formErrors: { email: '', password: '', repassword: '' },
+            emailValid: false,
+            passwordVaild: false,
+            formValid: false
+        }
+    }
+
+    // update state variable whenever user inputs. 
+    onChange = (e) => {
+        this.handleUserInput(e);
+    }
+
+    handleUserInput = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        this.setState({ [name]: value },
+            () => { this.validateField(name, value) });
+    }
+
+    validateField(fieldName, value) {
+        let fieldValidationErrors = this.state.formErrors;
+        let emailValid = this.state.emailValid;
+        let passwordValid = this.state.passwordValid;
+
+        switch (fieldName) {
+            case 'email':
+                emailValid = value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i);
+                fieldValidationErrors.email = emailValid ? '' : ' is invalid';
+                break;
+            case 'password':
+                passwordValid = value.length >= 6;
+                fieldValidationErrors.password = passwordValid ? '' : ' is too short';
+                break;
+            case 'repassword':
+                passwordValid = value === this.state.password;
+                fieldValidationErrors.password = passwordValid ? '' : ' does not match';
+                break;
+            default:
+                break;
+        }
+        this.setState({
+            formErrors: fieldValidationErrors,
+            emailValid: emailValid,
+            passwordValid: passwordValid
+        }, this.validateForm);
+    }
+
+    validateForm() {
+        this.setState({ formValid: this.state.emailValid && this.state.passwordValid });
+    }
+
+    errorClass(error) {
+        return (error.length === 0 ? '' : 'has-error');
+    }
+
+    onSubmit = (e) => {
+        e.preventDefault();   //prevents actual submission. 
+        console.log(this.state); // just checking values; remove once done. 
+        /* later on implement database entry */
+    }
 
     render() {
         return (
@@ -18,51 +83,52 @@ class SignUp extends Component {
                         <h2>Create account</h2>
                         <br />
 
-                        <form>
+                        <form onSubmit={this.onSubmit}>
                             <fieldset>
+                                <div className="panel panel-default">
+                                    <FormErrors formErrors={this.state.formErrors} />
+                                </div>
                                 <div className="col-md-6">
                                     <div className="form-group">
-                                        <label for="first_name">First Name:</label>
-                                        <input className="form-control" id="firstName" name="firstName" type="text" />
+                                        <label htmlFor="first_name">First Name:</label>
+                                        <input className="form-control" name="firstName" type="text" value={this.state.firstName} onChange={this.onChange} required />
                                     </div>
                                 </div>
 
                                 <div className="col-md-6">
                                     <div className="form-group">
-                                        <label for="last_name">Last Name:</label>
-                                        <input className="form-control" id="lastName" name="lastName" type="text" />
+                                        <label htmlFor="last_name">Last Name:</label>
+                                        <input className="form-control" name="lastName" type="text" value={this.state.lastName} onChange={this.onChange} required />
                                     </div>
                                 </div>
 
                                 <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label for="email">Email:</label>
-                                        <input className="form-control" id="email" name="email" type="email" />
+                                    <div className={`form-group ${this.errorClass(this.state.formErrors.email)}`}>
+                                        <label htmlFor="email">Email:</label>
+                                        <input className="form-control" name="email" type="email" value={this.state.email} onChange={this.onChange} />
                                     </div>
                                 </div>
 
                                 <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label for="password">Password:</label>
-                                        <input className="form-control" id="password" name="password" type="text" />
+                                    <div className={`form-group ${this.errorClass(this.state.formErrors.password)}`}>
+                                        <label htmlFor="password">Password:</label>
+                                        <input className="form-control" name="password" type="password" value={this.state.password} onChange={this.onChange} />
                                     </div>
                                 </div>
 
                                 <div className="col-md-6">
-                                    <div className="form-group">
-                                        <label for="repassword">Re-enter Password:</label>
-                                        <input className="form-control" id="repassword" name="repassword" type="text" />
+                                    <div className={`form-group ${this.errorClass(this.state.formErrors.repassword)}`}>
+                                        <label htmlFor="repassword">Confirm Password:</label>
+                                        <input className="form-control" name="repassword" type="password" value={this.state.repassword} onChange={this.onChange} />
                                     </div>
                                 </div>
                             </fieldset>
-                            
                             <hr />
-
-                            <input type="submit" className="btn btn-primary pull-right" value="Confirm" /><br /><br /><br />
+                            <input type="submit" className="btn btn-lg btn-primary" value="Create Account" disabled={!this.state.formValid}/><br /><br /><br />
                         </form>
                     </div>
                 </div>
-            </MainContainer>
+            </MainContainer >
 
         );
     }

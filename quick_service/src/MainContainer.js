@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Footer from './component/Footer/Footer';
+import Footer from './component/footer/Footer';
 import Sidebar from './component/sidebar/Sidebar';
 
 class MainContainer extends Component {
