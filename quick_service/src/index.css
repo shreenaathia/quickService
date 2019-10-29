@@ -49,8 +49,9 @@ body {
   border-bottom: 4px solid red;
 }
 
-#nav:last-child a .active {
+#nav:last-child a.active {
   border-bottom: 4px solid red;
+  color: red;
 }
 
 /* added base css for footer. Oct 23, 2019 - Jun*/

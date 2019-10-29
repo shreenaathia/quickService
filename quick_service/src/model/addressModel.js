@@ -27,6 +27,6 @@ const AddressSchema = new Schema({
     }]*/
 })
 
-const Service = mongoose.model('service', ServiceSchema);
+// const Address = mongoose.model('address', AddressSchema);
 
-module.exports = Service;
+module.exports = AddressSchema;
