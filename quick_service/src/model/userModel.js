@@ -31,6 +31,10 @@ const UserSchema = new Schema({
         unique: true,
         match: [/.+@.+\..+/, "Please enter a valid e-mail address"]
     },
+    phone: {
+        type: String,
+        required: true
+    },
     address: { 
         streetNumber: { 
         type : Number

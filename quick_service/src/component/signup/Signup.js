@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import MainContainer from '../../MainContainer';
 import { FormErrors } from './FormErrors';
+import { Redirect, withRouter } from 'react-router-dom';
 
 
-class SignUp extends Component {
+class Signup extends Component {
 
     constructor(props) {
         super(props);
@@ -16,7 +17,8 @@ class SignUp extends Component {
             formErrors: { email: '', password: '', repassword: '' },
             emailValid: false,
             passwordVaild: false,
-            formValid: false
+            formValid: false,
+            toProfile: false
         }
     }
 
@@ -71,10 +73,15 @@ class SignUp extends Component {
     onSubmit = (e) => {
         e.preventDefault();   //prevents actual submission. 
         console.log(this.state); // just checking values; remove once done. 
+        this.setState(() => ({ toProfile: true }));
         /* later on implement database entry */
     }
 
     render() {
+        if (this.state.toProfile === true) {
+            return <Redirect to='/profile' />
+        }
+
         return (
             <MainContainer>
                 <div className="signup">
@@ -84,7 +91,7 @@ class SignUp extends Component {
                         <br />
 
                         <form onSubmit={this.onSubmit}>
-                            <fieldset>
+                            <fieldset className="signupform">
                                 <div className="panel panel-default">
                                     <FormErrors formErrors={this.state.formErrors} />
                                 </div>
@@ -124,7 +131,7 @@ class SignUp extends Component {
                                 </div>
                             </fieldset>
                             <hr />
-                            <input type="submit" className="btn btn-lg btn-primary" value="Create Account" disabled={!this.state.formValid}/><br /><br /><br />
+                            <input type="submit" className="btn btn-lg btn-primary" value="Create Account" disabled={!this.state.formValid} /><br /><br /><br />
                         </form>
                     </div>
                 </div>
@@ -134,4 +141,4 @@ class SignUp extends Component {
     }
 }
 
-export default SignUp; 
+export default Signup; 

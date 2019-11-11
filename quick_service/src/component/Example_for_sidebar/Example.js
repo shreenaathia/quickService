@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MainContainer from '../../MainContainer';
-import SideBar from "../sidebar/Sidebar";
+import Sidebar from "../sidebar/Sidebar";
 
 
 class Example extends Component {

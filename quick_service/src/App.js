@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import NotFound from "./NotFound";
-import SignUp from "./component/signup/Signup";
+import Signup from "./component/signup/Signup";
 import Home from "./component/home/Home";
 import ServiceDetail from "./component/servicedetail/ServiceDetail";
 import Example from "./component/Example_for_sidebar/Example";
+import Profile from "./component/profile/Profile";
 
 
 ////  ONLY TO TEST THE SERVICE DETAIL PAGE  ////
@@ -45,9 +46,13 @@ class App extends Component {
                     )}/>
 
                     <Route exact path='/signup' render={() => (
-                        <SignUp />
+                        <Signup />
                     )}/>
 
+                    <Route exact path='/profile' render={() => (
+                        <Profile />
+                    )}/>
+                    
                     {/*temporary*/
                     /*until we implement a link to access to servicedetail, I use plumbing link to access it */}
                     <Route exact path='/plumbing' render={() => (

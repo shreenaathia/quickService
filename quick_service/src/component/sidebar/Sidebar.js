@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class SideBar extends Component {
+class Sidebar extends Component {
     render() {
         //console.log(this.props.highlight);
         return(
@@ -43,4 +43,4 @@ class SideBar extends Component {
     };
 }
 
-export default SideBar;
+export default Sidebar;

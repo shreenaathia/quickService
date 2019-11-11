@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Footer from './component/footer/Footer';
 import Sidebar from './component/sidebar/Sidebar';
+// import SidebarPrf from './component/sidebar/SidebarPrf';
 
 class MainContainer extends Component {
     constructor(props) {
@@ -13,7 +14,7 @@ class MainContainer extends Component {
     
     render() {
         return (
-            <div>
+            // <div>
                 <div className="container-fluid row">
 
                     <div className="row" id="with_bg">
@@ -61,17 +62,18 @@ class MainContainer extends Component {
                     </div>
 
                     <div className="row">
-                        <div className={(this.props.hasSidebar ? "visible" : "invisible")}> <Sidebar/> </div>
-                        <div className={(this.props.hasSidebar ? " col-sm-offset-1 col-sm-7 main" : " col-sm-12 main")}>
+                        {/* <div className={(this.props.hasSidebar ? "visible" : "invisible")}> <Sidebar/> </div>
+                        <div className={(this.props.hasSidebar_prf ? "visible" : "invisible")}> <Sidebar_prf/> </div>
+                        <div className={(this.props.hasSidebar ? " col-sm-offset-1 col-sm-7 main" : " col-sm-12 main")}> */}
                             {this.props.children}
-                        </div>
+                        {/* </div> */}
                     </div>
 
+                <Footer/>
                 </div>
 
-                <Footer/>
 
-            </div>
+            // </div>
         );
     }
 }
