@@ -7,16 +7,35 @@ const ServiceSchema = new Schema({
         trim: true,
         required: "Service name is Required"
     },
-    userId: { 
+    serviceDesc:{
+        type: String
+    },
+    userId: {
         type: Schema.Types.ObjectId,
         ref: 'user'
     },
-    address: [{ 
-        type: Schema.Types.ObjectId, 
-        ref: 'address'
-    }],
-    serviceType: { 
-        type: String 
+    address: {
+        streetNumber: {
+            type: Number
+        },
+        streetName: {
+            type: String
+        },
+        city: {
+            type: String
+        },
+        province: {
+            type: String
+        },
+        country: {
+            type: String
+        },
+        postal: {
+            type: String
+        }
+    },
+    serviceType: {
+        type: String
     },/*
     booking: [{ 
         type: Schema.Types.ObjectId, 
@@ -26,7 +45,7 @@ const ServiceSchema = new Schema({
         type: Schema.Types.ObjectId, 
         ref: 'review'
     }],*/
-    price: [{ 
+    price: [{
         type: Number
     }]
 })

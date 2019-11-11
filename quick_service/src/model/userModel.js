@@ -2,11 +2,6 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const UserSchema = new Schema({
-    userName: {
-        type: String,
-        trim: true,
-        required: "Username is Required"
-    },
     password: {
         type: String,
         trim: true,
@@ -51,21 +46,10 @@ const UserSchema = new Schema({
         postal: { 
             type: String
         } 
-        // type: Schema.Types.ObjectId, 
-        // ref: 'address'
-    }/*,
-    service: [{ 
-        type: Schema.Types.ObjectId, 
-        ref: 'service'
-    }],
-    booking: [{ 
-        type: Schema.Types.ObjectId, 
-        ref: 'booking'
-    }],
-    review: [{ 
-        type: Schema.Types.ObjectId, 
-        ref: 'review'
-    }]*/
+    },
+    phone: {
+        type: String
+    }
 })
 
 
