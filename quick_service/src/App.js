@@ -30,6 +30,18 @@ const serviceProvider = {
         "Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores"
     ]
 }
+
+// MOCK DATA //
+const mockuser = {
+    firstName: 'Jack',
+    lastName: 'Daniels',
+    email: 'jd123@gmail.com',
+    phone: '416-234-1234',
+    street: '123 Fake Street',
+    city: 'Springfield',
+    province: 'ON',
+    postal: 'L1H 2H4'
+}
 //................................................////
 
 
@@ -50,7 +62,7 @@ class App extends Component {
                     )}/>
 
                     <Route exact path='/profile' render={() => (
-                        <Profile />
+                        <Profile user= { mockuser }/>
                     )}/>
                     
                     {/*temporary*/

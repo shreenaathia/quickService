@@ -3,20 +3,19 @@ import MainContainer from '../../MainContainer';
 import SidebarPrf from '../sidebar/SidebarPrf';
 
 
+
 class Profile extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            firstName: '',
-            lastName: '',
-            email: '',
-            phone: '',
-            street: '',
-            city: '',
-            province: '',
-            postal: ''
+            user: props.user
         }
+    }
+
+    componentDidMount() {
+        //fetch from db -> json etc..
+        console.log('component mounted');
     }
 
     // update state variable whenever user inputs. 
@@ -31,14 +30,11 @@ class Profile extends Component {
             () => { this.validateField(name, value) });
     }
 
-    validateField(fieldName, value) {
-
-    }
-
     onSubmit = (e) => {
         e.preventDefault();   //prevents actual submission. 
         console.log(this.state); // just checking values; remove once done. 
         /* later on implement database entry */
+        //figure out how to update to database
     }
 
     render() {
@@ -57,14 +53,14 @@ class Profile extends Component {
                                 <div className="col-md-3">
                                     <div className="form-group">
                                         <label htmlFor="first_name">First Name:</label>
-                                        <input className="form-control" name="firstName" type="text" value={this.state.firstName} onChange={this.onChange} required />
+                                        <input className="form-control" name="firstName" type="text" value={this.state.user.firstName} onChange={this.onChange} required />
                                     </div>
                                 </div>
 
                                 <div className="col-md-3">
                                     <div className="form-group">
                                         <label htmlFor="last_name">Last Name:</label>
-                                        <input className="form-control" name="lastName" type="text" value={this.state.lastName} onChange={this.onChange} required />
+                                        <input className="form-control" name="lastName" type="text" value={this.state.user.lastName} onChange={this.onChange} required />
                                     </div>
                                 </div>
 
@@ -74,14 +70,14 @@ class Profile extends Component {
                                 <div className="col-md-3">
                                     <div className="form-group">
                                         <label htmlFor="email">Email:</label>
-                                        <input className="form-control" name="email" type="email" value={this.state.email} onChange={this.onChange} />
+                                        <input className="form-control" name="email" type="email" value={this.state.user.email} onChange={this.onChange} />
                                     </div>
                                 </div>
 
                                 <div className="col-md-3">
                                     <div className="form-group">
                                         <label htmlFor="phone">Phone Number:</label>
-                                        <input className="form-control" name="phone" type="text" value={this.state.phone} onChange={this.onChange} required />
+                                        <input className="form-control" name="phone" type="text" value={this.state.user.phone} onChange={this.onChange} required />
                                     </div>
                                 </div>
                             </div>
@@ -90,7 +86,7 @@ class Profile extends Component {
                                 <div className="col-md-6">
                                     <div className="form-group">
                                         <label htmlFor="street">Street:</label>
-                                        <input className="form-control" name="street" type="text" value={this.state.street} onChange={this.onChange} required />
+                                        <input className="form-control" name="street" type="text" value={this.state.user.street} onChange={this.onChange} required />
                                     </div>
                                 </div>
                             </div>
@@ -99,21 +95,21 @@ class Profile extends Component {
                                 <div className="col-md-2">
                                     <div className="form-group">
                                         <label htmlFor="city">City:</label>
-                                        <input className="form-control" name="city" type="text" value={this.state.city} onChange={this.onChange} required />
+                                        <input className="form-control" name="city" type="text" value={this.state.user.city} onChange={this.onChange} required />
                                     </div>
                                 </div>
 
                                 <div className="col-md-2">
                                     <div className="form-group">
                                         <label htmlFor="province">Province/Territory:</label>
-                                        <input className="form-control" name="province" type="text" value={this.state.province} onChange={this.onChange} required />
+                                        <input className="form-control" name="province" type="text" value={this.state.user.province} onChange={this.onChange} required />
                                     </div>
                                 </div>
 
                                 <div className="col-md-2">
                                     <div className="form-group">
                                         <label htmlFor="postal">Postal Code:</label>
-                                        <input className="form-control" name="postal" type="text" value={this.state.postal} onChange={this.onChange} required />
+                                        <input className="form-control" name="postal" type="text" value={this.state.user.postal} onChange={this.onChange} required />
                                     </div>
                                 </div>
                             </div>
